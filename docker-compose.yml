@@ -1,0 +1,17 @@
+version: '3'
+services:
+  cairo:
+    image: ghcr.io/foundry-rs/foundry:latest
+    container_name: foundrydev
+    # build:
+    #   context: .
+    env_file:
+      - .env
+    ports:
+      - 8888:8888
+    volumes:
+      - ./srv:/srv
+    command: ["sh"]
+    working_dir: /srv
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
