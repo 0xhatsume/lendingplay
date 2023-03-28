@@ -10,7 +10,7 @@ services:
     ports:
       - 8888:8888
     volumes:
-      - ./srv:/srv
+      - .:/srv
     command: ["sh"]
     working_dir: /srv
     stdin_open: true # docker run -i
