@@ -1,6 +1,6 @@
 version: '3'
 services:
-  cairo:
+  lendoor:
     image: ghcr.io/foundry-rs/foundry:latest
     container_name: foundrydev
     # build:
@@ -8,10 +8,10 @@ services:
     env_file:
       - .env
     ports:
-      - 8888:8888
+      - 8545:8545
     volumes:
-      - .:/srv
+      - .:/app
     command: ["sh"]
-    working_dir: /srv
+    working_dir: /app
     stdin_open: true # docker run -i
     tty: true        # docker run -t
